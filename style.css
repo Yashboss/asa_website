@@ -17,6 +17,7 @@ body {
   background-attachment: fixed;
   color: white;
   cursor: default;
+  background-repeat: no-repeat;
   overflow-x: hidden;
 }
 .static > div {
