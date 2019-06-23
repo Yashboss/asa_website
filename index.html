@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+
+  <body onscroll="Scroll()">
+    <div class="static">
+      <div class="logo"><img src="./images/vec_log.png" alt="logo" /></div>
+      <div class="navbar">
+        <a class="active" id="home">HOME</a>
+        <a value="about">ABOUT</a>
+        <a value="projects">PROJECTS</a>
+        <a value="contacts">CONTACTS</a>
+        <a value="faqs">FAQS</a>
+        <hr class="navdash" />
+      </div>
+      <div class="footer">
+        <div class="compName"></div>
+        <div class="bottomNav">
+          <div class="active" id="home"></div>
+          <div id="about"></div>
+          <div id="projects"></div>
+          <div id="contacts"></div>
+          <div id="faqs"></div>
+        </div>
+        <div class="socialLinks"></div>
+      </div>
+    </div>
+    <div class="mov-cards">
+      <div class="home active" id="home">
+        <div class="heading">
+          <div>Something</div>
+          <div id="secHomeHeading">Written Here</div>
+        </div>
+        <div class="paragraph">
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+          ab illo inventore veritatis et quasi architect beatae vitae dicta sun
+          t explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+          aut odit aut fugit, sed quia consequuntur magni Dolores eos qui
+          ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+          dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
+          quia non numquam eius modi tempora incidunt ut labore et dolore magnam
+          aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+          exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex
+          ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in
+          ea voluptate velit esse quam nihil molestiae consequatur, vel illum
+          qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        </div>
+        <div class="leftBlockHome">
+          <img src="./images/home/leftBlock.png" alt="" />
+          <div class='leftBlockHeading'>HEA<br>DING</div>
+          <div class='leftBlockContent'>samjack abraca blah-blah<br>fontisecti rectical</div>
+        </div>
+      </div>
+      <div class="about ready" id="about" onclick="next()">
+        <div class="navPeak">About Us</div>
+        <div class="heading">About</div>
+      </div>
+      <div class="projects notActive" id="projects">
+        <div class="navPeak">Projects</div>
+        <div class="heading">Projects</div>
+      </div>
+      <div class="contacts" id="contacts">
+        <div class="navPeak">Contacts</div>
+        <div class="heading">Contacts</div>
+      </div>
+      <div class="faqs" id="faqs">
+        <div class="navPeak">FAQS</div>
+        <div class="heading">FAQS</div>
+      </div>
+    </div>
+
+    <script>
+      setNavDash();
+
+      function setNavDash() {
+        var navLow = 0;
+        var lowBnav = $(".navbar .active").offset().left;
+        navLow = (lowBnav * 100) / $(window).width() - 0.1;
+        var navWidth = ($(".navbar .active").width() * 100) / $(window).width();
+        $(".navdash").css({
+          width: `${navWidth + 0.5}vw`,
+          left: `${navLow - 35.1}vw`
+        });
+      }
+
+      function bottomNavChange() {
+        var navCard = $(".navbar .active")
+          .html()
+          .toLowerCase();
+        $(".bottomNav div").removeClass("active");
+        $(`.bottomNav #${navCard}`).addClass("active");
+      }
+
+      $(".navbar a").click(function() {
+        $(".mov-cards div").removeClass("active");
+        $(".mov-cards div").removeClass("ready");
+        $(".mov-cards div").removeClass("notActive");
+        var navCard = $(this)
+          .html()
+          .toLowerCase();
+        $(`.mov-cards .${navCard}`).addClass("active");
+        $(`.mov-cards .${navCard}`)
+          .next()
+          .addClass("ready");
+        $(".mov-cards .ready").attr("onClick", "next()");
+        $(`.mov-cards .${navCard}`)
+          .next()
+          .next()
+          .addClass("notActive");
+
+        $(".navbar .active").removeClass("active");
+        $(this).addClass("active");
+        setNavDash();
+          Scroll();
+        bottomNavChange();
+      });
+
+      function next() {
+        if ($(".mov-cards .active").next()[0]) {
+          $(".navbar .active")
+            .next()
+            .addClass("active");
+          $(".navbar .active")
+            .first()
+            .removeClass("active");
+
+          $(".notActive").attr("onClick", "next()");
+          $(".notActive")
+            .prev()
+            .removeAttr("onClick");
+          $(".mov-cards .ready")
+            .prev()
+            .removeClass("active");
+          $(".mov-cards .ready")
+            .next()
+            .removeClass("notActive");
+          $(".mov-cards .ready").addClass("active");
+          $(".mov-cards .ready")
+            .next()
+            .addClass("ready");
+          $(".mov-cards .active").removeClass("ready");
+          $(".mov-cards .ready")
+            .next()
+            .addClass("notActive");
+
+          bottomNavChange();
+          setNavDash();
+          Scroll();
+        }
+      }
+
+      function Scroll() {
+        if ($(".home").hasClass("active")) {
+          console.log("ahsh");
+          if (window.pageYOffset > 170) {
+            $(".about.ready").css("left", "100vw");
+            $(".leftBlockHome").css("left", "-60vw");
+          } else {
+            if ($(".about").hasClass("ready")) {
+              $(".about").css("left", "72vw");
+              $(".leftBlockHome").css("left", "0vw");
+            }
+          }
+        } else {
+          if ($(".about").hasClass("active")) 
+          $(".about").css("left", "0vw");
+          else if ($(".about").hasClass("notActive")) 
+          $(".about").css("left", "100vw");
+          else
+          $(".about").css("left", "-100vw");
+        }
+      }
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+@font-face {
+  font-family: sylfaen;
+  src: url(./sylfaen.ttf);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  background: linear-gradient(
+      to bottom right,
+      rgba(255, 19, 157, 0.308),
+      rgba(255, 230, 0, 0.267)
+    ),
+    url(./images/home/background.png) 100vw 100vh;
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+  color: white;
+  cursor: default;
+  overflow-x: hidden;
+}
+.static > div {
+  z-index: 3;
+}
+.logo > img {
+  position: fixed;
+  width: 5vw;
+  top: 3.5vh;
+  left: 6vw;
+}
+.navbar {
+  position: fixed;
+  font-size: 1vw;
+  font-family: sylfaen;
+  font-weight: 100;
+  top: 2.6vw;
+  left: 35vw;
+  text-align: justify;
+  width: 30.5vw;
+}
+.navbar > a {
+  display: inline-block;
+  margin-right: 1.9vw;
+  padding-bottom: 0.1vw;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.navdash {
+  height: 0.15vw;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  border: none;
+  border-radius: 10px;
+  transition: left 1s, width 1s;
+  /* left:0; */
+}
+.bottomNav {
+  position: fixed;
+  width: 8vw;
+  height: 3vh;
+  top: 92vh;
+  left: 46vw;
+}
+.bottomNav > div {
+  width: 0.5vw;
+  height: 0.5vw;
+  border-radius: 50%;
+  margin-top: 1vw;
+  border: none;
+  background-color: white;
+  float: left;
+  transition: border 1.2s, background-color 1s, margin 1s;
+}
+.bottomNav > div:not(:last-child) {
+  margin-right: 0.97vw;
+}
+.bottomNav > div.active {
+  border: #ff3600 solid;
+  background-color: rgba(255, 255, 255, 0);
+  border-width: 0.15vw;
+  margin-top: 0.85vw;
+}
+
+.mov-cards > div {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: -100vw;
+  transform: scale(1);
+  z-index: 1;
+  transition: transform 1s, left 1s;
+  font-family: sylfaen;
+  transition: left 1s;
+}
+.mov-cards > div.active {
+  transform: scale(1);
+  left: 0vw;
+  z-index: 1;
+}
+.mov-cards > div.ready {
+  left: 72vw;
+  transform: scale(0.6);
+  border-radius: 5vh;
+  cursor: pointer;
+  z-index: 2;
+}
+.mov-cards > div.notActive {
+  display: none;
+  left: 100vw;
+}
+.navPeak {
+    font-size: 4vw;
+    margin-top: 23vh;
+    margin-left: 3vw;
+    opacity: 0.5;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+  .active > .navPeak {
+    display: none;
+  }
+.home {
+  background-color: rgba(0, 0, 0, 0.335);
+  height:200vh !important;
+}
+.home > .heading {
+  position: absolute;
+  width: 50vw;
+  font-size: 6.5vw;
+  letter-spacing: 0.3vw;
+  top: 18vh;
+  left: 10vw;
+}
+.home > .heading > #secHomeHeading {
+  text-align: right;
+}
+.home > .paragraph {
+  font-size: 0.95vw;
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+  left: 30vw;
+  top: 55vh;
+  width: 55vw;
+  opacity: .7;
+  text-align: justify;
+  color: rgb(243, 243, 243);
+  font-weight: 900;
+}
+.leftBlockHome{
+    position: absolute;
+    top:54vh;
+    transition: left 1s;
+}
+.leftBlockHome>img{
+    position: absolute;
+    width:20vw !important;
+}
+.leftBlockHome>div{
+    position: absolute;
+}
+.leftBlockHeading{
+    font-size: 2vw;
+    letter-spacing: 0.3vw;
+    line-height: 2.2vw;
+    left:2vw;
+    top:2vw;
+    padding:0.2vw;
+    border: #FF3600 solid;
+}
+.leftBlockContent{
+    left: 5.5vw;
+    top:8vw;
+    width: 13vw;
+    font-size: 1.1vw;
+    letter-spacing: 0.05vw;
+    text-align: right;
+    text-decoration:solid #2A00FF underline;
+}
+.about {
+  background-color: #ff370041;
+}
+.about > .heading {
+  position: absolute;
+  font-size: 10vh;
+  top: 40vh;
+  left: 40vw;
+}
+.projects {
+  background-color: rgba(35, 38, 44, 0.342);
+}
+.projects > .heading {
+  position: absolute;
+  font-size: 10vh;
+  top: 40vh;
+  left: 40vw;
+}
+.contacts {
+  background-color: rgba(35, 38, 44, 0.342);
+}
+.contacts > .heading {
+  position: absolute;
+  font-size: 10vh;
+  top: 40vh;
+  left: 40vw;
+}
+.faqs {
+  background-color: rgba(35, 38, 44, 0.342);
+}
+.faqs>.navPeak{
+    margin-top:17vw;
+}
+.faqs > .heading {
+  position: absolute;
+  font-size: 10vh;
+  top: 40vh;
+  left: 40vw;
+}
