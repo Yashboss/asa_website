@@ -15,9 +15,9 @@ body {
     url(./images/home/background.png);
   background-size: 100vw 100vh;
   background-attachment: fixed;
-  background-repeat: no-repeat;
   color: white;
   cursor: default;
+  background-repeat: no-repeat;
   overflow-x: hidden;
 }
 .static > div {
