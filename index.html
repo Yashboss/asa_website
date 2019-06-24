@@ -58,11 +58,6 @@
           ea voluptate velit esse quam nihil molestiae consequatur, vel illum
           qui dolorem eum fugiat quo voluptas nulla pariatur?"
         </div>
-        <div class="leftBlockHome">
-          <img src="./images/home/leftBlock.png" alt="" />
-          <div class='leftBlockHeading'>HEA<br>DING</div>
-          <div class='leftBlockContent'>samjack abraca blah-blah<br>fontisecti rectical</div>
-        </div>
       </div>
       <div class="about ready" id="about" onclick="next()">
         <div class="navPeak">About Us</div>
@@ -124,7 +119,7 @@
         $(".navbar .active").removeClass("active");
         $(this).addClass("active");
         setNavDash();
-          Scroll();
+        Scroll();
         bottomNavChange();
       });
 
@@ -164,28 +159,20 @@
 
       function Scroll() {
         if ($(".home").hasClass("active")) {
-          console.log("ahsh");
-          if (window.pageYOffset > 170) {
+          if (window.pageYOffset > 100) {
             $(".about.ready").css("left", "100vw");
-            $(".leftBlockHome").css("left", "-60vw");
           } else {
             if ($(".about").hasClass("ready")) {
               $(".about").css("left", "72vw");
-              $(".leftBlockHome").css("left", "0vw");
             }
           }
         } else {
-          if ($(".about").hasClass("active")) 
-          $(".about").css("left", "0vw");
-          else if ($(".about").hasClass("notActive")) 
-          $(".about").css("left", "100vw");
-          else
-          $(".about").css("left", "-100vw");
+          if ($(".about").hasClass("active")) $(".about").css("left", "0vw");
+          else if ($(".about").hasClass("notActive"))
+            $(".about").css("left", "100vw");
+          else $(".about").css("left", "-100vw");
         }
       }
-
-
-
     </script>
   </body>
 </html>

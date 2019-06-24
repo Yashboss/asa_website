@@ -12,9 +12,10 @@ body {
       rgba(255, 19, 157, 0.308),
       rgba(255, 230, 0, 0.267)
     ),
-    url(./images/home/background.png) 100vw 100vh;
+    url(./images/home/background.png);
   background-size: 100vw 100vh;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   color: white;
   cursor: default;
   overflow-x: hidden;
@@ -81,6 +82,15 @@ body {
   border-width: 0.15vw;
   margin-top: 0.85vw;
 }
+/* @media screen and (max-width: 441px){} */
+.mov-cards{
+  width:100vw;
+  height:100vh;
+  left:0;
+  top:0;
+  position: fixed;
+  overflow-x:hidden;
+}
 
 .mov-cards > div {
   position: absolute;
@@ -111,7 +121,7 @@ body {
 }
 .navPeak {
     font-size: 4vw;
-    margin-top: 23vh;
+    margin-top: 8vw;
     margin-left: 3vw;
     opacity: 0.5;
     writing-mode: vertical-rl;
@@ -147,36 +157,6 @@ body {
   text-align: justify;
   color: rgb(243, 243, 243);
   font-weight: 900;
-}
-.leftBlockHome{
-    position: absolute;
-    top:54vh;
-    transition: left 1s;
-}
-.leftBlockHome>img{
-    position: absolute;
-    width:20vw !important;
-}
-.leftBlockHome>div{
-    position: absolute;
-}
-.leftBlockHeading{
-    font-size: 2vw;
-    letter-spacing: 0.3vw;
-    line-height: 2.2vw;
-    left:2vw;
-    top:2vw;
-    padding:0.2vw;
-    border: #FF3600 solid;
-}
-.leftBlockContent{
-    left: 5.5vw;
-    top:8vw;
-    width: 13vw;
-    font-size: 1.1vw;
-    letter-spacing: 0.05vw;
-    text-align: right;
-    text-decoration:solid #2A00FF underline;
 }
 .about {
   background-color: #ff370041;
