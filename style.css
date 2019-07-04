@@ -7,18 +7,19 @@ body {
   padding: 0;
   margin: 0;
   width: 100vw;
-  background: linear-gradient(
-      to bottom right,
-      rgba(255, 19, 157, 0.308),
-      rgba(255, 230, 0, 0.267)
-    ),
+  /* background: 
     url(./images/home/background.png);
   background-size: 100vw 100vh;
-  background-attachment: fixed;
+  background-attachment: fixed; */
   color: white;
   cursor: default;
-  background-repeat: no-repeat;
   overflow-x: hidden;
+}
+.bg-image>img{
+  width:100vw;
+  height:100vh;
+  z-index: -1;
+  transition: filter 1s;
 }
 .static > div {
   z-index: 3;
@@ -99,9 +100,8 @@ body {
   left: -100vw;
   transform: scale(1);
   z-index: 1;
-  transition: transform 1s, left 1s;
   font-family: sylfaen;
-  transition: left 1s;
+  transition: left 1s, transform 1s;
 }
 .mov-cards > div.active {
   transform: scale(1);
@@ -113,7 +113,7 @@ body {
   transform: scale(0.6);
   border-radius: 5vh;
   cursor: pointer;
-  z-index: 2;
+  z-index: 3;
 }
 .mov-cards > div.notActive {
   display: none;
@@ -131,6 +131,11 @@ body {
     display: none;
   }
 .home {
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 19, 157, 0.308),
+    rgba(255, 230, 0, 0.267)
+  );
   background-color: rgba(0, 0, 0, 0.335);
   height:200vh !important;
 }
@@ -158,9 +163,10 @@ body {
   color: rgb(243, 243, 243);
   font-weight: 900;
 }
-.about {
-  background-color: #ff370041;
+.about{
+  background-color: rgba(255, 255, 255, 0.212);
 }
+
 .about > .heading {
   position: absolute;
   font-size: 10vh;

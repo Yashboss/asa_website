@@ -15,12 +15,13 @@
 
   <body onscroll="Scroll()">
     <div class="static">
+      <div class="bg-image"><img src="./images/home/background.png" alt=""></div>
       <div class="logo"><img src="./images/vec_log.png" alt="logo" /></div>
       <div class="navbar">
         <a class="active" id="home">HOME</a>
         <a value="about">ABOUT</a>
         <a value="projects">PROJECTS</a>
-        <a value="contacts">CONTACTS</a>
+        <a value="contacts">CONTACT US</a>
         <a value="faqs">FAQS</a>
         <hr class="navdash" />
       </div>
@@ -68,8 +69,8 @@
         <div class="heading">Projects</div>
       </div>
       <div class="contacts" id="contacts">
-        <div class="navPeak">Contacts</div>
-        <div class="heading">Contacts</div>
+        <div class="navPeak">Contact Us</div>
+        <div class="heading">Contacts Us</div>
       </div>
       <div class="faqs" id="faqs">
         <div class="navPeak">FAQS</div>
@@ -91,7 +92,19 @@
         });
       }
 
+      function checkAboutActive(){
+        if($(".about").hasClass('active')){
+          $('.bg-image img').css('filter','blur(4px)');
+          $('.bg-image img').css('-webkit-filter','blur(4px)');
+        }
+        else{
+          $('.bg-image img').css('filter','blur(0px)');
+          $('.bg-image img').css('-webkit-filter','blur(0px)');
+        }
+      }
+
       function bottomNavChange() {
+        checkAboutActive();
         var navCard = $(".navbar .active")
           .html()
           .toLowerCase();
