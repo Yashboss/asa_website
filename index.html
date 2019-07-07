@@ -13,16 +13,18 @@
     <title>Document</title>
   </head>
 
-  <body onscroll="Scroll()">
+  <body>
     <div class="static">
-      <div class="bg-image"><img src="./images/home/background.png" alt=""></div>
+      <div class="bg-image">
+        <img src="./images/home/background1.png" alt="" />
+      </div>
       <div class="logo"><img src="./images/vec_log.png" alt="logo" /></div>
       <div class="navbar">
-        <a class="active" id="home">HOME</a>
-        <a value="about">ABOUT</a>
-        <a value="projects">PROJECTS</a>
-        <a value="contacts">CONTACT US</a>
-        <a value="faqs">FAQS</a>
+        <a name="home" class="active" id="home">HOME</a>
+        <a name="about">ABOUT</a>
+        <a name="projects">PROJECTS</a>
+        <a name="contacts">CONTACT US</a>
+        <a name="faqs">FAQS</a>
         <hr class="navdash" />
       </div>
       <div class="footer">
@@ -59,27 +61,90 @@
           ea voluptate velit esse quam nihil molestiae consequatur, vel illum
           qui dolorem eum fugiat quo voluptas nulla pariatur?"
         </div>
+        <div class="homeArrow">
+          <img src="./images/downLongArrow.svg" alt="" />
+
+          <img class="notActive" src="./images/upLongArrow.svg" alt="" />
+        </div>
+        <div class="stats">
+          <div>
+            <img class="compassImg" src="./images/compass.png" alt="" />
+            <div>
+              <span>Bhopal</span> <span>Agra</span> <span>Gwalior</span>
+              <span>Datia</span> <span>Dabra</span>
+              <span>Malanpur Ind. Area</span>
+            </div>
+          </div>
+          <div>
+            <div>95+</div>
+            <div>Residential Projects</div>
+          </div>
+          <div>
+            <div>750+</div>
+            <div>Commercial Projects</div>
+          </div>
+          <div>
+            <div>50+</div>
+            <div>Interior Projects</div>
+          </div>
+          <div>
+            <div>23+</div>
+            <div>Valuation</div>
+          </div>
+        </div>
       </div>
       <div class="about ready" id="about" onclick="next()">
-        <div class="navPeak">About Us</div>
-        <div class="heading">About</div>
+        <div class="navPeak"><p>About Us</p></div>
+        <div class="heading">About us</div>
+        <div class="paragraph">&emsp;&emsp;&emsp;&emsp;&emsp;
+          Established by Ar. Arvind Shah in XXXX, Arvind Shah Architects (ASA)
+          is recognized for its diverse work that encompasses a range of
+          specialised practice areas – Residential, Commercial, Industrial,
+          Workplace, Institutional, Houses, Interiors and Valuation. The
+          practice operates in historic city of Gwalior, Madhya Pradesh. <br> Work
+          ethics: <br> &emsp;&emsp;&emsp;&emsp;&emsp; All projects at ASA are examined, based on its working
+          principles of how to energy efficiently provide the fundamentals of
+          comfort, safety, liveability and yet sustainably respond to the local
+          climate and ecology while remaining economically viable and globally
+          pertinent. We have pioneered this approach by operating beyond the
+          traditional precincts whilst addressing the user brief and aspiration
+          and building to perfection. All our design solutions are rooted in
+          Sustainability, Optimisation, Uniqueness and Liveability. These
+          parameters define the enquiry process that shapes the architectural
+          approach of Arvind Shah Architects. Work experience:
+        </div>
       </div>
       <div class="projects notActive" id="projects">
-        <div class="navPeak">Projects</div>
+        <div class="navPeak"><p>Projects</p></div>
         <div class="heading">Projects</div>
       </div>
       <div class="contacts" id="contacts">
-        <div class="navPeak">Contact Us</div>
+        <div class="navPeak"><p>Contact Us</p></div>
         <div class="heading">Contacts Us</div>
       </div>
       <div class="faqs" id="faqs">
-        <div class="navPeak">FAQS</div>
+        <div class="navPeak"><p>FAQS</p></div>
         <div class="heading">FAQS</div>
       </div>
     </div>
 
     <script>
       setNavDash();
+      $(".mov-cards").scroll(() => {
+        if ($(".home").offset().top < -380) {
+          $(".homeArrow img:first").addClass("notActive");
+          $(".homeArrow img:last").removeClass("notActive");
+        } else {
+          $(".homeArrow img:first").removeClass("notActive");
+          $(".homeArrow img:last").addClass("notActive");
+        }
+      });
+      $(".homeArrow img:first").click(() => {
+        $(".mov-cards").animate({ scrollTop: 900 }, 1000);
+      });
+      $(".homeArrow img:last").click(() => {
+        $(".mov-cards").animate({ scrollTop: 0 }, 1000);
+      });
 
       function setNavDash() {
         var navLow = 0;
@@ -92,22 +157,19 @@
         });
       }
 
-      function checkAboutActive(){
-        if($(".about").hasClass('active')){
-          $('.bg-image img').css('filter','blur(4px)');
-          $('.bg-image img').css('-webkit-filter','blur(4px)');
-        }
-        else{
-          $('.bg-image img').css('filter','blur(0px)');
-          $('.bg-image img').css('-webkit-filter','blur(0px)');
+      function checkAboutActive() {
+        if ($(".about").hasClass("active") || $(".projects").hasClass("active")) {
+          $(".bg-image img").css("filter", "blur(6px)");
+          $(".bg-image img").css("-webkit-filter", "blur(6px)");
+        } else {
+          $(".bg-image img").css("filter", "blur(0px)");
+          $(".bg-image img").css("-webkit-filter", "blur(0px)");
         }
       }
 
       function bottomNavChange() {
         checkAboutActive();
-        var navCard = $(".navbar .active")
-          .html()
-          .toLowerCase();
+        var navCard = $(".navbar .active").attr("name");
         $(".bottomNav div").removeClass("active");
         $(`.bottomNav #${navCard}`).addClass("active");
       }
@@ -116,9 +178,7 @@
         $(".mov-cards div").removeClass("active");
         $(".mov-cards div").removeClass("ready");
         $(".mov-cards div").removeClass("notActive");
-        var navCard = $(this)
-          .html()
-          .toLowerCase();
+        var navCard = $(this).attr("name");
         $(`.mov-cards .${navCard}`).addClass("active");
         $(`.mov-cards .${navCard}`)
           .next()
@@ -132,7 +192,6 @@
         $(".navbar .active").removeClass("active");
         $(this).addClass("active");
         setNavDash();
-        Scroll();
         bottomNavChange();
       });
 
@@ -166,26 +225,26 @@
 
           bottomNavChange();
           setNavDash();
-          Scroll();
         }
       }
 
-      function Scroll() {
-        if ($(".home").hasClass("active")) {
-          if (window.pageYOffset > 100) {
-            $(".about.ready").css("left", "100vw");
-          } else {
-            if ($(".about").hasClass("ready")) {
-              $(".about").css("left", "72vw");
-            }
-          }
-        } else {
-          if ($(".about").hasClass("active")) $(".about").css("left", "0vw");
-          else if ($(".about").hasClass("notActive"))
-            $(".about").css("left", "100vw");
-          else $(".about").css("left", "-100vw");
-        }
-      }
+      // function Scroll() {
+      //   if ($(".home").hasClass("active")) {
+      //     if (window.pageYOffset > 100) {
+      //       console.log("kkk");
+      //       $(".about.ready").css("left", "100vw");
+      //     } else {
+      //       if ($(".about").hasClass("ready")) {
+      //         $(".about").css("left", "72vw");
+      //       }
+      //     }
+      //   } else {
+      //     if ($(".about").hasClass("active")) $(".about").css("left", "0vw");
+      //     else if ($(".about").hasClass("notActive"))
+      //       $(".about").css("left", "100vw");
+      //     else $(".about").css("left", "-100vw");
+      //   }
+      // }
     </script>
   </body>
 </html>

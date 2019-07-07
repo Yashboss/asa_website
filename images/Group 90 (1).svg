@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="247" height="97" viewBox="0 0 247 97">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-size: 20px;
+        font-family: SegoeUI-Semilight, Segoe UI;
+        font-weight: 300;
+        letter-spacing: 0.05em;
+        opacity: 0.78;
+      }
+
+      .cls-2, .cls-5 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+      }
+
+      .cls-3 {
+        fill: #00ff41;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_90" data-name="Group 90" transform="translate(-879 -3697.5)">
+    <text id="Curriculum_Vitae_Statement_of_Purpose_Portfolio" data-name="Curriculum Vitae 
+Statement of Purpose 
+Portfolio" class="cls-1" transform="translate(915 3719.5)"><tspan x="0" y="0">Curriculum Vitae </tspan><tspan x="0" y="35">Statement of Purpose </tspan><tspan x="0" y="70">Portfolio</tspan></text>
+    <g id="Rectangle_128" data-name="Rectangle 128" class="cls-2" transform="translate(880 3705)">
+      <rect class="cls-4" width="15" height="15"/>
+      <rect class="cls-5" x="-0.5" y="-0.5" width="16" height="16"/>
+    </g>
+    <g id="Rectangle_129" data-name="Rectangle 129" class="cls-2" transform="translate(880 3774)">
+      <rect class="cls-4" width="15" height="15"/>
+      <rect class="cls-5" x="-0.5" y="-0.5" width="16" height="16"/>
+    </g>
+    <g id="Rectangle_130" data-name="Rectangle 130" class="cls-2" transform="translate(880 3740)">
+      <rect class="cls-4" width="15" height="15"/>
+      <rect class="cls-5" x="-0.5" y="-0.5" width="16" height="16"/>
+    </g>
+    <rect id="Rectangle_131" data-name="Rectangle 131" class="cls-3" width="7" height="7" transform="translate(884 3744)"/>
+  </g>
+</svg>

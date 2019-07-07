@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="394" height="20" viewBox="0 0 394 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #707070;
+        stroke-linecap: round;
+        stroke-width: 10px;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="1.116" y1="1.69" x2="-0.711" y2="2.339" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1592e6"/>
+      <stop offset="1" stop-color="#0b4973"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_92" data-name="Group 92" transform="translate(-876 -1430)">
+    <line id="Line_47" data-name="Line 47" class="cls-1" x2="384" transform="translate(881 1440)"/>
+    <rect id="Rectangle_104" data-name="Rectangle 104" class="cls-2" width="247" height="10" rx="5" transform="translate(876 1435)"/>
+    <circle id="Ellipse_18" data-name="Ellipse 18" class="cls-3" cx="10" cy="10" r="10" transform="translate(1111 1430)"/>
+  </g>
+</svg>
